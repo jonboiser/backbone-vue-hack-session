@@ -1,18 +1,17 @@
-var Backbone = require('backbone');
-var { TodoCollection } = require('./models');
-var { TodoListView } = require('./views');
+const Backbone = require('backbone');
+const { TodoCollection } = require('./models');
+const { TodoListView } = require('./views');
 
 
-var TodoRouter = Backbone.Router.extend({
+const TodoRouter = Backbone.Router.extend({
 
-  initialize: function() {
-
-    var todoCollection = new TodoCollection();
-    var todoListView = new TodoListView({
-      collection: todoCollection
+  initialize() {
+    const todoCollection = new TodoCollection();
+    const todoListView = new TodoListView({
+      collection: todoCollection,
+      el: '#app',
     });
-
-  }
+  },
 
 });
 

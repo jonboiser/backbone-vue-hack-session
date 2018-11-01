@@ -1,9 +1,7 @@
-var $ = require('jquery');
-var TodoRouter = require('./router');
+const $ = require('jquery');
+const TodoRouter = require('./router');
 
 // Run the app
-$(function() {
-
-  var todoApp = new TodoRouter();
-
+$(() => {
+  const todoApp = new TodoRouter();
 });

@@ -1,16 +1,16 @@
-var { TodoListView } = require('@/views');
-var { TodoCollection } = require('@/models');
+const { TodoListView } = require('@/views');
+const { TodoCollection } = require('@/models');
 
 describe('TodoListView render method', () => {
   it('should render an empty list when empty', () => {
-    var todoCollection = new TodoCollection();
-    var todoListView = new TodoListView({ collection: todoCollection });
+    const todoCollection = new TodoCollection();
+    const todoListView = new TodoListView({ collection: todoCollection });
     todoListView.render();
-    var html = todoListView.$el[0].outerHTML;
+    const html = todoListView.$el[0].outerHTML;
     expect(html).toMatchSnapshot();
   });
   it('should render a list when not empty', () => {
-    var todoCollection = new TodoCollection([
+    const todoCollection = new TodoCollection([
       {
         completed: true,
         description: 'A completed task',
@@ -18,11 +18,11 @@ describe('TodoListView render method', () => {
       {
         completed: false,
         description: 'An incompete task',
-      }
+      },
     ]);
-    var todoListView = new TodoListView({ collection: todoCollection });
+    const todoListView = new TodoListView({ collection: todoCollection });
     todoListView.render();
-    var html = todoListView.$el[0].outerHTML;
+    const html = todoListView.$el[0].outerHTML;
     expect(html).toMatchSnapshot();
   });
 });
