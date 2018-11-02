@@ -1,6 +1,6 @@
 <template>
 
-  <li>
+  <li class="todo">
     <span
       class="todo-toggle glyphicon glyphicon-ok"
       :class="todoToggleClass"

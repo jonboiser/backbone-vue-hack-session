@@ -13,8 +13,8 @@ describe('TodoListView render method', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  xit('should render a list when not empty', () => {
-    const todoCollection = new TodoCollection([
+  it('should render a list when not empty', () => {
+    const todos = [
       {
         completed: true,
         description: 'A completed task',
@@ -23,10 +23,10 @@ describe('TodoListView render method', () => {
         completed: false,
         description: 'An incompete task',
       },
-    ]);
-    const todoListView = new TodoListView({ collection: todoCollection });
-    todoListView.render();
-    const html = todoListView.$el[0].outerHTML;
-    expect(html).toMatchSnapshot();
+    ];
+    const wrapper = mount(TodoList, {
+      propsData: { todos },
+    });
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
